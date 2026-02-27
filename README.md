@@ -36,7 +36,8 @@
 | ⏰ **Commits by Hour** | Bar chart revealing your peak coding hours |
 | 📈 **Stats Card** | Stars, PRs, issues, repos, contributions — all at a glance |
 | 📋 **Repo Table** | Highlighted repositories with stars, forks, and language info |
-| 🔗 **Embeddable Cards** | Every chart has a one-click **Copy Link** & **Copy Markdown** for embedding in your README |
+| 🖼️ **SVG Image Cards** | Server-rendered SVG cards that work anywhere — GitHub READMEs, websites, blogs |
+| 🔗 **Embeddable Cards** | Every chart has one-click **Copy Link**, **Copy Markdown**, & **Copy SVG** |
 | 🌗 **Light / Dark Mode** | Full site-level theme toggle with smooth transitions |
 | 📱 **Responsive** | Looks great on desktop, tablet, and mobile |
 
@@ -47,22 +48,22 @@
 <div align="center">
 
 ### 👤 Profile Header
-![Saurabhtbj1201's Profile](https://github.gu-saurabh.site/embed/Saurabhtbj1201/profile-header?theme=default)
+<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/profile-header?theme=default" alt="Saurabhtbj1201's Profile" />
 
 ### 📊 Top Languages by Repo
-![Saurabhtbj1201's Top Languages by Repo](https://github.gu-saurabh.site/embed/Saurabhtbj1201/languages-by-repo?theme=default)
+<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/languages-by-repo?theme=default" alt="Saurabhtbj1201's Top Languages by Repo" />
 
 ### 💾 Top Languages by Commit
-![Saurabhtbj1201's Top Languages by Commit](https://github.gu-saurabh.site/embed/Saurabhtbj1201/languages-by-commit?theme=default)
+<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/languages-by-commit?theme=default" alt="Saurabhtbj1201's Top Languages by Commit" />
 
 ### ⏰ Commits by Hour
-![Saurabhtbj1201's Commits by Hour](https://github.gu-saurabh.site/embed/Saurabhtbj1201/commits-by-hour?theme=default)
+<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/commits-by-hour?theme=default" alt="Saurabhtbj1201's Commits by Hour" />
 
 ### 📈 Stats Card
-![Saurabhtbj1201's Stats](https://github.gu-saurabh.site/embed/Saurabhtbj1201/stats?theme=default)
+<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/stats?theme=default" alt="Saurabhtbj1201's Stats" />
 
 ### 📋 Highlighted Repos
-![Saurabhtbj1201's Highlighted Repos](https://github.gu-saurabh.site/embed/Saurabhtbj1201/repo-table?theme=default)
+<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/repo-table?theme=default" alt="Saurabhtbj1201's Highlighted Repos" />
 
 </div>
 
@@ -100,38 +101,80 @@ npm run preview
 
 ---
 
-## 🔗 Embeddable Charts
+## 🖼️ SVG Cards for GitHub README
 
-Every chart card includes embed URLs you can use in any markdown file, README, or website.
+Every card is available as a **server-rendered SVG image** — no JavaScript, no iframes. Just paste the URL in your README and it works everywhere!
 
-### Usage in Your GitHub README
+### Quick Copy-Paste
 
 ```markdown
-![My GitHub Stats](https://github.gu-saurabh.site/embed/YOUR_USERNAME/stats?theme=dark)
+<!-- Stats Card -->
+![My GitHub Stats](https://github.gu-saurabh.site/api/card/YOUR_USERNAME/stats?theme=dark)
+
+<!-- Profile Header -->
+![My Profile](https://github.gu-saurabh.site/api/card/YOUR_USERNAME/profile-header?theme=dark)
+
+<!-- Top Languages by Repo -->
+![Languages](https://github.gu-saurabh.site/api/card/YOUR_USERNAME/languages-by-repo?theme=dark)
+
+<!-- Top Languages by Commit -->
+![Languages by Commit](https://github.gu-saurabh.site/api/card/YOUR_USERNAME/languages-by-commit?theme=dark)
+
+<!-- Commits by Hour -->
+![Commits by Hour](https://github.gu-saurabh.site/api/card/YOUR_USERNAME/commits-by-hour?theme=dark)
+
+<!-- Highlighted Repos -->
+![Repos](https://github.gu-saurabh.site/api/card/YOUR_USERNAME/repo-table?theme=dark)
 ```
 
-### Available Chart Types
+### Available Card Types
 
-| Chart Type | Embed Path |
+| Card Type | SVG API Path |
 |---|---|
-| Profile Header | `/embed/:username/profile-header` |
-| Languages by Repo | `/embed/:username/languages-by-repo` |
-| Languages by Commit | `/embed/:username/languages-by-commit` |
-| Commits by Hour | `/embed/:username/commits-by-hour` |
-| Stats Card | `/embed/:username/stats` |
-| Repo Table | `/embed/:username/repo-table` |
+| Profile Header | `/api/card/:username/profile-header` |
+| Languages by Repo | `/api/card/:username/languages-by-repo` |
+| Languages by Commit | `/api/card/:username/languages-by-commit` |
+| Commits by Hour | `/api/card/:username/commits-by-hour` |
+| Stats Card | `/api/card/:username/stats` |
+| Repo Table | `/api/card/:username/repo-table` |
 
 ### Theme Parameter
 
 Add `?theme=` to customize the look:
 
+| Theme | Preview |
+|---|---|
+| `default` | Light theme with clean colors |
+| `dark` | GitHub dark theme |
+| `algolia` | Deep blue Algolia-inspired |
+| `aura` | Purple-tinted Aura theme |
+| `aura_dark` | Darker variant of Aura |
+| `dracula` | Classic Dracula color scheme |
+
+**Example with theme:**
+```markdown
+![Stats](https://github.gu-saurabh.site/api/card/YOUR_USERNAME/stats?theme=dracula)
 ```
-?theme=default
-?theme=dark
-?theme=algolia
-?theme=aura
-?theme=aura_dark
-?theme=dracula
+
+### How It Works
+
+The `/api/card/` endpoint is a **Vercel Serverless Function** that:
+1. Fetches your GitHub data via the GitHub API
+2. Generates a beautiful **pure SVG** image server-side
+3. Returns it with `Content-Type: image/svg+xml`
+4. Caches results for 30 minutes for fast loading
+
+This means the images render natively on GitHub, no JavaScript or iframes required! ✅
+
+---
+
+## 🔗 Interactive Embed (for Websites)
+
+For websites and blogs that support iframes, you can also use the interactive embed:
+
+```html
+<iframe src="https://github.gu-saurabh.site/embed/YOUR_USERNAME/stats?theme=dark"
+  width="400" height="400" frameborder="0"></iframe>
 ```
 
 ---
@@ -150,6 +193,7 @@ Add `?theme=` to customize the look:
 | 🎨 **Tailwind CSS** | Utility-first styling |
 | 🔗 **Axios** | GitHub API requests |
 | 🌐 **Vercel** | Deployment & hosting |
+| 🖼️ **SVG API** | Server-side card generation |
 
 </div>
 
@@ -159,31 +203,40 @@ Add `?theme=` to customize the look:
 
 ```
 Github-Visualize/
+├── api/
+│   ├── card/
+│   │   └── [username]/
+│   │       └── [type].ts       # Serverless SVG card endpoint
+│   ├── lib/
+│   │   ├── cards.ts            # SVG card generators
+│   │   ├── github.ts           # Server-side GitHub data fetcher
+│   │   └── themes.ts           # Card theme definitions
+│   └── tsconfig.json           # TypeScript config for API
 ├── public/
-│   ├── favicon.ico          # Browser favicon
-│   ├── logo.png             # App logo & OG image
-│   ├── robots.txt           # SEO crawl rules
-│   └── sitemap.xml          # Sitemap for search engines
+│   ├── favicon.ico             # Browser favicon
+│   ├── logo.png                # App logo & OG image
+│   ├── robots.txt              # SEO crawl rules
+│   └── sitemap.xml             # Sitemap for search engines
 ├── src/
 │   ├── components/
-│   │   ├── CardWrapper.tsx       # Embeddable card with copy buttons
-│   │   ├── CommitsByHour.tsx     # Hourly commit bar chart
-│   │   ├── EmbedChart.tsx        # Standalone embed renderer
-│   │   ├── GithubDashboard.tsx   # Main dashboard layout
-│   │   ├── GoogleAd.tsx          # Google AdSense component
+│   │   ├── CardWrapper.tsx     # Embeddable card with copy buttons
+│   │   ├── CommitsByHour.tsx   # Hourly commit bar chart
+│   │   ├── EmbedChart.tsx      # Standalone embed renderer
+│   │   ├── GithubDashboard.tsx # Main dashboard layout
+│   │   ├── GoogleAd.tsx        # Google AdSense component
 │   │   ├── LanguagesByCommit.tsx # Language pie (by commits)
-│   │   ├── LanguagesByRepo.tsx   # Language pie (by repos)
-│   │   ├── ProfileHeader.tsx     # Profile card with activity graph
-│   │   ├── RepoStatsTable.tsx    # Repository highlights table
-│   │   └── StatsCard.tsx         # Key metrics overview
+│   │   ├── LanguagesByRepo.tsx # Language pie (by repos)
+│   │   ├── ProfileHeader.tsx   # Profile card with activity graph
+│   │   ├── RepoStatsTable.tsx  # Repository highlights table
+│   │   └── StatsCard.tsx       # Key metrics overview
 │   ├── github/
-│   │   └── useGithubProfile.ts   # GitHub API hook
-│   ├── App.tsx              # Router & site shell
-│   ├── main.tsx             # React entry point
-│   ├── theme.tsx            # Theme system (6 card themes)
-│   └── style.css            # Global styles
-├── index.html               # SEO-optimized HTML entry
-├── vercel.json              # Vercel deployment config
+│   │   └── useGithubProfile.ts # GitHub API hook
+│   ├── App.tsx                 # Router & site shell
+│   ├── main.tsx                # React entry point
+│   ├── theme.tsx               # Theme system (6 card themes)
+│   └── style.css               # Global styles
+├── index.html                  # SEO-optimized HTML entry
+├── vercel.json                 # Vercel deployment config
 ├── package.json
 ├── tsconfig.json
 └── tailwind.config.js
@@ -202,12 +255,19 @@ Github-Visualize/
 
 The included `vercel.json` handles:
 - ✅ SPA client-side routing rewrites
+- ✅ SVG card API route (`/api/card/`) for GitHub README images
 - ✅ Permissive iframe headers for embed routes
 - ✅ Long-term cache headers for static assets
 
 ### Custom Domain
 
 Point your custom domain (e.g. `github.gu-saurabh.site`) in **Vercel → Settings → Domains**.
+
+### GitHub Token (Optional)
+
+For higher API rate limits, add a `GITHUB_TOKEN` environment variable in your Vercel project settings:
+1. Go to **Vercel → Project → Settings → Environment Variables**
+2. Add `GITHUB_TOKEN` with a GitHub personal access token (read-only scope)
 
 ---
 
@@ -223,7 +283,7 @@ The project includes a ready-to-use `GoogleAd` component. To activate ads:
 
 ### GitHub API
 
-The app uses the public GitHub API. For higher rate limits, you can add a personal access token in the `useGithubProfile.ts` hook.
+The app uses the public GitHub API. For higher rate limits, you can add a personal access token in the `useGithubProfile.ts` hook (client-side) or as a `GITHUB_TOKEN` env var (server-side SVG cards).
 
 ---
 

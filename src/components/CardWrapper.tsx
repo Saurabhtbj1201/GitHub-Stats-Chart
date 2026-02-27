@@ -46,7 +46,8 @@ export const CardWrapper: React.FC<Props> = ({
         : ''
 
     const embedUrl = `${baseUrl}/embed/${username}/${chartType}?theme=${cardTheme}`
-    const markdownImg = `![${title}](${embedUrl})`
+    const svgUrl = `${baseUrl}/api/card/${username}/${chartType}?theme=${cardTheme}`
+    const markdownImg = `![${title}](${svgUrl})`
 
     const copyToClipboard = useCallback(
         (text: string, fieldName: string) => {
