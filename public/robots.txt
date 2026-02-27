@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /embed/
+
+Sitemap: https://github-visualize.vercel.app/sitemap.xml
