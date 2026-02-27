@@ -42,17 +42,27 @@
 
 ---
 
-## 🖼️ Component Themes
+## 🖼️ Component Previews
 
 <div align="center">
 
-| Default | Dark | Dracula |
-|:---:|:---:|:---:|
-| Clean white cards | GitHub-dark inspired | Classic Dracula palette |
+### 👤 Profile Header
+![Saurabhtbj1201's Profile](https://github.gu-saurabh.site/embed/Saurabhtbj1201/profile-header?theme=default)
 
-| Algolia | Aura | Aura Dark |
-|:---:|:---:|:---:|
-| Deep navy blue | Subtle purple glow | Cyberpunk purple-cyan |
+### 📊 Top Languages by Repo
+![Saurabhtbj1201's Top Languages by Repo](https://github.gu-saurabh.site/embed/Saurabhtbj1201/languages-by-repo?theme=default)
+
+### 💾 Top Languages by Commit
+![Saurabhtbj1201's Top Languages by Commit](https://github.gu-saurabh.site/embed/Saurabhtbj1201/languages-by-commit?theme=default)
+
+### ⏰ Commits by Hour
+![Saurabhtbj1201's Commits by Hour](https://github.gu-saurabh.site/embed/Saurabhtbj1201/commits-by-hour?theme=default)
+
+### 📈 Stats Card
+![Saurabhtbj1201's Stats](https://github.gu-saurabh.site/embed/Saurabhtbj1201/stats?theme=default)
+
+### 📋 Highlighted Repos
+![Saurabhtbj1201's Highlighted Repos](https://github.gu-saurabh.site/embed/Saurabhtbj1201/repo-table?theme=default)
 
 </div>
 
