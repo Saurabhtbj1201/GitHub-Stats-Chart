@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /embed/
 
-Sitemap: https://github-visualize.vercel.app/sitemap.xml
+Sitemap: https://github.gu-saurabh.site/sitemap.xml
