@@ -48,22 +48,22 @@
 <div align="center">
 
 ### 👤 Profile Header
-<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/profile-header?theme=default" alt="Saurabhtbj1201's Profile" />
+<img src="https://github.gu-saurabh.site/embed/Saurabhtbj1201/profile-header?theme=default" alt="Saurabhtbj1201's Profile" />
 
 ### 📊 Top Languages by Repo
-<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/languages-by-repo?theme=default" alt="Saurabhtbj1201's Top Languages by Repo" />
+<img src="https://github.gu-saurabh.site/embed/Saurabhtbj1201/languages-by-repo?theme=default" alt="Saurabhtbj1201's Top Languages by Repo" />
 
 ### 💾 Top Languages by Commit
-<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/languages-by-commit?theme=default" alt="Saurabhtbj1201's Top Languages by Commit" />
+<img src="https://github.gu-saurabh.site/embed/Saurabhtbj1201/languages-by-commit?theme=default" alt="Saurabhtbj1201's Top Languages by Commit" />
 
 ### ⏰ Commits by Hour
-<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/commits-by-hour?theme=default" alt="Saurabhtbj1201's Commits by Hour" />
+<img src="https://github.gu-saurabh.site/embed/Saurabhtbj1201/commits-by-hour?theme=default" alt="Saurabhtbj1201's Commits by Hour" />
 
 ### 📈 Stats Card
-<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/stats?theme=default" alt="Saurabhtbj1201's Stats" />
+<img src="https://github.gu-saurabh.site/embed/Saurabhtbj1201/stats?theme=default" alt="Saurabhtbj1201's Stats" />
 
 ### 📋 Highlighted Repos
-<img src="https://github.gu-saurabh.site/api/card/Saurabhtbj1201/repo-table?theme=default" alt="Saurabhtbj1201's Highlighted Repos" />
+<img src="https://github.gu-saurabh.site/embed/Saurabhtbj1201/repo-table?theme=default" alt="Saurabhtbj1201's Highlighted Repos" />
 
 </div>
 
